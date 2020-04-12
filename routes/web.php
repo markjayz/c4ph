@@ -18,9 +18,25 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix'=>'api/v1'], function() use($router){
+
     $router->get('/addresses', 'AddressController@index');
     $router->post('/address', 'AddressController@create');
     $router->get('/address/{id}', 'AddressController@show');
     $router->put('/address/{id}', 'AddressController@update');
     $router->delete('/address/{id}', 'AddressController@destroy');
+
+    $router->get('/contacts', 'ContactController@index');
+    $router->post('/contact', 'ContactController@create');
+    $router->get('/contact/{id}', 'ContactController@show');
+    $router->put('/contact/{id}', 'ContactController@update');
+    $router->delete('/contact/{id}', 'ContactController@destroy');
+
+    $router->get('/products', 'ProductController@index');
+    $router->post('/product', 'ProductController@create');
+    $router->get('/product/{id}', 'ProductController@show');
+    $router->put('/product/{id}', 'ProductController@update');
+    $router->delete('/product/{id}', 'ProductController@destroy');
+
+    
+
 });

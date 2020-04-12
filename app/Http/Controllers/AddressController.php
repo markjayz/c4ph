@@ -57,9 +57,17 @@ class AddressController extends Controller
      { 
         $address= Address::find($id);
         
-        $address->name = $request->input('name');
-        $address->price = $request->input('price');
-        $address->description = $request->input('description');
+         
+         $address->party_id       = $request->input('party_id');
+         $address->type           = $request->input('type');
+         $address->street         = $request->input('street');
+         $address->district       = $request->input('district');
+         $address->city           = $request->input('city');
+         $address->state          = $request->input('state');
+         $address->postal_code    = $request->input('postal_code');
+         $address->region         = $request->input('region');
+         $address->country_id     = $request->input('country_id');
+            
         $address->save();
         return response()->json($address);
      }
